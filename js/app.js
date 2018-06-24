@@ -1,3 +1,18 @@
+function move() {
+  var elem = document.getElementById("myBar");
+  var width = 10;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++;
+      elem.style.width = width + '%';
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}
+
 var config = {
   apiKey: "AIzaSyD7m-SNXr4XUXFoX9AqQTjIUW0cqxkTNKg",
   authDomain: "easy-code-sn.firebaseapp.com",
@@ -21,4 +36,20 @@ fileButton.addEventListener('change', function(e) {
   //Upload file
   var task= storageRef.put(file);
   //Update progress bar
+  task.on('state_changed',
+
+  function progess(snapshot){
+    var percentage = (snapshot.bytesTransferred /
+    snapshot.totalBytes) * 100;
+    uploder.value= percentage;
+  },
+
+  function error (err) {
+
+  },
+
+  function complete () {
+
+  }
+);
 });

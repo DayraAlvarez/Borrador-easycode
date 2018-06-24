@@ -6,29 +6,25 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
- <progress value="0" max="100" id="uploader">0%</progress>
- <input type="file" value="upload" id="fileButton"/>
-
-
- <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
- <script>
-   // Initialize Firebase
-   var config = {
-     apiKey: "AIzaSyD7m-SNXr4XUXFoX9AqQTjIUW0cqxkTNKg",
-     authDomain: "easy-code-sn.firebaseapp.com",
-     databaseURL: "https://easy-code-sn.firebaseio.com",
-     projectId: "easy-code-sn",
-     storageBucket: "easy-code-sn.appspot.com",
-     messagingSenderId: "1075281073613"
-   };
-   firebase.initializeApp(config);
-
-
+  <!--Seccion Imagenes-->
+  <div class="card" style="width: 18rem;">
+    <div class="card-header">Album de fotos</div>
+    <img class="card-img-top" src="assets/images/image2.jpg" alt="Card image cap">
+    <div class="card-body">
+      <p class="card-text">Comparte imagenes con los demas miembros de la comunidad</p>
+    <div id="myProgress">
+      <div id="myBar">10%</div>
+    </div>
+     <input type="file" value="upload" id="fileButton"/>
+     <br>
+     <button onclick="move()">Subir foto</button>
+    </div>
+</div>
+  <!--Script firebase-->
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="js/assets/bootstrap.min.js"></script>
     <script src="js/app.js"></script>
-    </script>
 </body>
 </html>
